@@ -10,4 +10,20 @@
   </div>
 <% end %>
 
+<h2>回答する</h2>
+
+<%= form_with model: Answer.new, url: topic_answers_path(@topic) do |form| %>
+  <div>
+    <%= form.label :body, "回答" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.label :author, "回答者名" %>
+    <%= form.text_field :author %>
+  </div>
+
+  <%= form.submit "投稿する" %>
+<% end %>
+
 <%= link_to "一覧に戻る", root_path %>
