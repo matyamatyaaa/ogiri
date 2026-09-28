@@ -1,5 +1,6 @@
 <h1>The Ogiri</h1>
 <p>お題に答えて爆笑を取ろう</p>
+<%= link_to "お題を投稿する", new_topic_path %>
 <% @topics.each do |topic| %>
   <div>
     <h2><%= topic.body %></h2>

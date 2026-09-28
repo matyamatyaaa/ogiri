@@ -1,0 +1,17 @@
+<h1>お題を投稿する</h1>
+
+<%= form_with model: @topic, url: create_topic_path do |form| %>
+  <div>
+    <%= form.label :body, "お題" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.label :author, "投稿者名" %>
+    <%= form.text_field :author %>
+  </div>
+
+  <%= form.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", root_path %>

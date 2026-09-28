@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "topics#index"
+  get "topics/new", to: "topics#new", as: :new_topic
+  post "topics/create", to: "topics#create", as: :create_topic
 end
