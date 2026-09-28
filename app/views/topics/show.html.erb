@@ -1,0 +1,13 @@
+<h1><%= @topic.body %></h1>
+<p>投稿者：<%= @topic.author %></p>
+
+<h2>回答一覧</h2>
+
+<% @topic.answers.each do |answer| %>
+  <div>
+    <p><%= answer.body %></p>
+    <p>回答者：<%= answer.author %></p>
+  </div>
+<% end %>
+
+<%= link_to "一覧に戻る", root_path %>

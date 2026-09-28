@@ -3,6 +3,10 @@ class TopicsController < ApplicationController
     @topics = Topic.all
   end
 
+  def show
+    @topic = Topic.find(params[:id])
+  end
+
   def new
     @topic = Topic.new
   end
@@ -18,5 +22,6 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:body, :author)
   end
-  
+
+
 end

@@ -3,7 +3,7 @@
 <%= link_to "お題を投稿する", new_topic_path %>
 <% @topics.each do |topic| %>
   <div>
-    <h2><%= topic.body %></h2>
+    <h2><%= link_to topic.body, topic_path(topic) %></h2>
     <p>投稿者：<%= topic.author %></p>
   </div>
 <% end %>
