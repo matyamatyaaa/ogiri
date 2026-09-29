@@ -7,6 +7,17 @@
   <div>
     <p><%= answer.body %></p>
     <p>回答者：<%= answer.author %></p>
+    <p>
+     笑い<%= answer.likes.where(level: "warai").count %>
+     大笑い<%= answer.likes.where(level: "oowarai").count %>
+     爆笑<%= answer.likes.where(level: "bakusho").count %>
+    </p>
+
+    <p>
+     <%= button_to "笑い", answer_likes_path(answer,"warai") %>
+     <%= button_to "大笑い", answer_likes_path(answer,"oowarai") %>
+     <%= button_to "爆笑", answer_likes_path(answer,"bakusho") %>
+    </p> 
   </div>
 <% end %>
 

@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   post "topics/create", to: "topics#create", as: :create_topic
   get "topics/:id", to: "topics#show", as: :topic
   post "topics/:topic_id/answers", to: "answers#create", as: :topic_answers
+  post "answers/:answer_id/likes/:level", to: "likes#create", as: :answer_likes
 end

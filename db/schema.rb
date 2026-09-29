@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_28_170508) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_29_043331) do
   create_table "answers", force: :cascade do |t|
     t.text "body"
     t.string "author"
@@ -18,6 +18,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_28_170508) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_answers_on_topic_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "answer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "level"
+    t.index ["answer_id"], name: "index_likes_on_answer_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -28,4 +36,5 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_28_170508) do
   end
 
   add_foreign_key "answers", "topics"
+  add_foreign_key "likes", "answers"
 end
